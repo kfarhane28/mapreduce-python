@@ -79,11 +79,11 @@ hadoop fs -copyFromLocal /formation/mapreduce/example1/input.txt  input/
 # execution Program Mapreduce
 hadoop jar /usr/hdp/current/hadoop-mapreduce-historyserver/hadoop-streaming.jar
 -Dmaperd.reduce,tasks=1
--file /home/cloudera/Exemple1/mapper.py
+-file /formation/mapreduce/exemple1/mapper.py
 -mapper "python /formation/mapreduce/example1/mapper.py"
--file /home/cloudera/Exemple1/reducer.py
+-file /formation/mapreduce/example1/reducer.py
 -reducer "python /formation/mapreduce/example1/reducer.py"
--input Exemple1/input.txt #exemple
+-input input/input.txt #exemple
 -output out
 ```
 
