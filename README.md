@@ -98,4 +98,4 @@ hdfs dfs -cat out/part-00000
 ```bash
 # suppression du répertoire Output
 hdfs dfs -rm -r out
-``
+```
