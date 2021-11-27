@@ -3,10 +3,13 @@
 
 ### Exemples : 
 
+	* Exemple 0: word count vu en cours
 	* Exemple 1: Total des ventes par magasin
 	* Exemple 4: Calculer maximum et minimum du salaire
 	* Exemple 5: Calculer moyenne de l'écart type du Salaire
 	* Exemple 6: Anagram 
+
+### Exemple 0 : peu importe le format de fichier input:
 
 ### Exemple 1 : en à utiliser un fichier input sous la forme suivant:
 
@@ -29,11 +32,11 @@ cat <chemin de fichier input on local> | python <chemin de fichier mapper.py on 
 ```
 ### Copier le fichier input on HDFS
 ```bash
-hdfs dfs -CopyFromLocal <chemin du ficher input on Local> <nom de dossier de destination>
+hdfs dfs -put <chemin du ficher input on Local> <nom de dossier de destination>
 ```
 ou : 
 ```bash
-hadoop fs -CopyFromLocal <chemin du fichier input on Local> <nom de dossier de destination>
+hadoop fs -put <chemin du fichier input on Local> <nom de dossier de destination>
 ```
 ### Commande d'exécution du program MapReduce en Python :
 
@@ -41,9 +44,9 @@ hadoop fs -CopyFromLocal <chemin du fichier input on Local> <nom de dossier de d
 hadoop jar <chemin de fichier streaming.jar> 
 -Dmaperd.reduce,tasks=1
 -file  <chemin du ficher map on Local>
--mapper "python <chemin du ficher map  on Local>"
+-mapper "mapper.py"
 -file <chemin du ficher reduce on Local>
--reducer "python <chemin du ficher reduce on Local>"
+-reducer "reducer.py"
 -input <chemin du ficher input on HDFS>
 -output <chemin du ficher output on HDFS>
 ```
@@ -51,13 +54,13 @@ hadoop jar <chemin de fichier streaming.jar>
 ### Commande d'afficher contenu de fichier Output :
 
 ```bash
-hadoop fs -cat <chemin de fichier output>/part-00000 
+hdfs dfs -cat <chemin de fichier output>/part-00000 
 ```
 
 ### Commande de suppression du répertoire Output :
 
 ```bash
-hadoop fs -rm -r <répertoire de fichier output>
+hdfs dfs -rm -r <répertoire de fichier output>
 ```
 
 ### Execution d'un exemple :
@@ -67,12 +70,12 @@ copier l'exemple 1 dans le chemin suivant: /formation/mapreduce
 
 ```bash
 # créer répertoire input dans HDFS
-hadoop fs -mkdir /user/<user>/input
+hdfs dfs -mkdir /user/<user>/input
 ```
 
 ```bash
 # transférer le fichier input.text du local vers HDFS
-hadoop fs -copyFromLocal /formation/mapreduce/example1/input.txt  input/ 
+hadoop fs -put /formation/mapreduce/example1/input.txt  input/ 
 ```
 
 ```bash
@@ -80,19 +83,19 @@ hadoop fs -copyFromLocal /formation/mapreduce/example1/input.txt  input/
 hadoop jar /usr/hdp/current/hadoop-mapreduce-historyserver/hadoop-streaming.jar
 -Dmaperd.reduce,tasks=1
 -file /formation/mapreduce/exemple1/mapper.py
--mapper "python /formation/mapreduce/example1/mapper.py"
+-mapper "mapper.py"
 -file /formation/mapreduce/example1/reducer.py
--reducer "python /formation/mapreduce/example1/reducer.py"
--input input/input.txt #exemple
+-reducer "reducer.py"
+-input input/input.txt
 -output out
 ```
 
 ```bash
 # afficher le contenu de fichier output
-hadoop fs -cat out/part-00000 
+hdfs dfs -cat out/part-00000 
 ```
 
 ```bash
 # suppression du répertoire Output
-hadoop fs -rm -r out
+hdfs dfs -rm -r out
 ``
