@@ -63,26 +63,26 @@ hadoop fs -rm -r <répertoire de fichier output>
 ### Execution d'un exemple :
 en va choisi l'exemple 1 pour tester
 
-copier l'exemple 1 dans le chemin suivant: /home/cloudera
+copier l'exemple 1 dans le chemin suivant: /formation/mapreduce
 
 ```bash
 # créer répertoire input dans HDFS
-hadoop fs -mkdir /user/input
+hadoop fs -mkdir /user/<user>/input
 ```
 
 ```bash
 # transférer le fichier input.text du local vers HDFS
-hadoop fs -copyFromLocal /home/cloudera/Exemple1/input.txt  input/ 
+hadoop fs -copyFromLocal /formation/mapreduce/example1/input.txt  input/ 
 ```
 
 ```bash
 # execution Program Mapreduce
-hadoop jar /usr/lib/hadoop-0.20-mapreduce/contrib/streaming/hadoop-streaming-2.6.0-mr1-cdh5.12.0.jar
+hadoop jar /usr/hdp/current/hadoop-mapreduce-historyserver/hadoop-streaming.jar
 -Dmaperd.reduce,tasks=1
 -file /home/cloudera/Exemple1/mapper.py
--mapper "python /home/cloudera/Exemple1/mapper.py"
+-mapper "python /formation/mapreduce/example1/mapper.py"
 -file /home/cloudera/Exemple1/reducer.py
--reducer "python /home/cloudera/Exemple1/reducer.py"
+-reducer "python /formation/mapreduce/example1/reducer.py"
 -input Exemple1/input.txt #exemple
 -output out
 ```
