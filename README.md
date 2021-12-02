@@ -5,9 +5,9 @@
 
 	* Exemple 0: word count vu en cours
 	* Exemple 1: Total des ventes par magasin
-	* Exemple 4: Calculer maximum et minimum du salaire
-	* Exemple 5: Calculer moyenne de l'écart type du Salaire
-	* Exemple 6: Anagram 
+	* Exemple 4 (optionnel): Calculer maximum et minimum du salaire
+	* Exemple 5 (optionnel): Calculer moyenne de l'écart type du Salaire
+	* Exemple 6 (optionnel): Anagram 
 
 ### Exemple 0 : peu importe le format de fichier input:
 
