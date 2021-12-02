@@ -34,10 +34,7 @@ cat <chemin de fichier input on local> | python <chemin de fichier mapper.py on 
 ```bash
 hdfs dfs -put <chemin du ficher input on Local> <nom de dossier de destination>
 ```
-ou : 
-```bash
-hadoop fs -put <chemin du fichier input on Local> <nom de dossier de destination>
-```
+
 ### Commande d'exécution du program MapReduce en Python :
 
 ```bash
@@ -66,16 +63,24 @@ hdfs dfs -rm -r <répertoire de fichier output>
 ### Execution d'un exemple :
 en va choisi l'exemple 1 pour tester
 
-copier l'exemple 1 dans le chemin suivant: /formation/mapreduce
 
 ```bash
-# créer répertoire input dans HDFS
+# se mettre dans le repertoire local: /formation/mapreduce
+cd /formation/mapreduce/exemple1
+```
+
+```bash
+# créer répertoire input dans HDFS, ce répertoire va contenir le fichier de donnée input.txt
 hdfs dfs -mkdir /user/<user>/input
 ```
 
 ```bash
 # transférer le fichier input.text du local vers HDFS
-hadoop fs -put /formation/mapreduce/example1/input.txt  input/ 
+hadoop fs -put input.txt  input/ 
+```
+```bash
+# verifier que le fichier de donnée existe dans hdfs
+hadoop fs -ls  input/ 
 ```
 
 ```bash
@@ -89,6 +94,7 @@ hadoop jar /usr/hdp/current/hadoop-mapreduce-historyserver/hadoop-streaming.jar
 -input input/input.txt
 -output out
 ```
+# Vous pouvez verifier dans YARN UI ou Job History UI que le traitement MapReduce est terminé avec succès
 
 ```bash
 # afficher le contenu de fichier output
@@ -96,6 +102,6 @@ hdfs dfs -cat out/part-00000
 ```
 
 ```bash
-# suppression du répertoire Output
+# une fois terminé, supprimer du répertoire Output pour repartir avec l'exemple suivant (sinon utiliser un autre repertoire output)
 hdfs dfs -rm -r out
 ```
