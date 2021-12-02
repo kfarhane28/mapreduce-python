@@ -25,42 +25,13 @@
 		arbre fiable fable vendre
 		devenir faible barbe
 
-### Executer le program MapReduce Python on local
+### Executer le program MapReduce Python on local (ceci est uniquement pour tester et valider le code Python du mapper et reducer
 pour test avant de passer en MapReduce pour détecter les erreurs Syntaxique
 ```bash
 cat <chemin de fichier input on local> | python <chemin de fichier mapper.py on local> | python <chemin de fichier reducer.py on local>
 ```
-### Copier le fichier input on HDFS
-```bash
-hdfs dfs -put <chemin du ficher input on Local> <nom de dossier de destination>
-```
 
-### Commande d'exécution du program MapReduce en Python :
-
-```bash
-hadoop jar <chemin de fichier streaming.jar> 
--Dmaperd.reduce,tasks=1
--file  <chemin du ficher map on Local>
--mapper "mapper.py"
--file <chemin du ficher reduce on Local>
--reducer "reducer.py"
--input <chemin du ficher input on HDFS>
--output <chemin du ficher output on HDFS>
-```
-
-### Commande d'afficher contenu de fichier Output :
-
-```bash
-hdfs dfs -cat <chemin de fichier output>/part-00000 
-```
-
-### Commande de suppression du répertoire Output :
-
-```bash
-hdfs dfs -rm -r <répertoire de fichier output>
-```
-
-### Execution d'un exemple :
+### Execution d'un exemple directement sur le cluster Hadoop (traitement parallèle distribué) :
 en va choisi l'exemple 1 pour tester
 
 
