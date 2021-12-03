@@ -2,14 +2,14 @@
 ## MapReduce Python Example
 
 ### Exemples : 
-
-	* Exemple 0: word count vu en cours
+Vous êtes sensés faire que l'exemple 0 et l'exemple 1
+	* Exemple 0: word count (vu en cours)
 	* Exemple 1: Total des ventes par magasin
 	* Exemple 4 (optionnel): Calculer maximum et minimum du salaire
 	* Exemple 5 (optionnel): Calculer moyenne de l'écart type du Salaire
 	* Exemple 6 (optionnel): Anagram 
 
-### Exemple 0 : peu importe le format de fichier input:
+### Exemple 0 : peu importe le format de fichier input: on veut compter le nombre d'occurrence de chaque mot dans le ou les fichiers input
 
 ### Exemple 1 : en à utiliser un fichier input sous la forme suivant:
 
@@ -28,14 +28,14 @@
 ### comprendre le code python du mapper et reducer
 ouvrir les ficher mapper.py et reducer.py pour l'exemple 0 et essayer de comprendre/comparer avec le cours.
 
-### Executer le program MapReduce Python on local (ceci est uniquement pour tester et valider le code Python du mapper et reducer
+### Executer le program MapReduce Python on local (ceci est uniquement pour tester et valider le code Python du mapper et reducer)
 pour test avant de passer en MapReduce pour détecter les erreurs Syntaxique
 ```bash
 cat <chemin de fichier input on local> | python <chemin de fichier mapper.py on local> | python <chemin de fichier reducer.py on local>
 ```
 
 ### Execution d'un exemple directement sur le cluster Hadoop (traitement parallèle distribué) :
-en va choisi l'exemple 1 pour tester
+on a choisi l'exemple 1 pour tester
 
 
 ```bash
