@@ -60,7 +60,7 @@ hdfs dfs -ls  input/
 ```bash
 # execution Program Mapreduce
 hadoop jar /usr/hdp/current/hadoop-mapreduce-historyserver/hadoop-streaming.jar \
--Dmaperd.reduce,tasks=1 \
+-Dmaperd.reduce.tasks=1 \
 -file /formation/mapreduce/exemple0/mapper.py \
 -mapper "mapper.py" \
 -file /formation/mapreduce/exemple0/reducer.py \
