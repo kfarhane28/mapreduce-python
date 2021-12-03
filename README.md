@@ -50,11 +50,11 @@ hdfs dfs -mkdir /user/<user>/input
 
 ```bash
 # transférer le fichier input.text du local vers HDFS
-hadoop fs -put input.txt  input/ 
+hdfs dfs -put input.txt  input/ 
 ```
 ```bash
 # verifier que le fichier de donnée existe dans hdfs
-hadoop fs -ls  input/ 
+hdfs dfs -ls  input/ 
 ```
 
 ```bash
