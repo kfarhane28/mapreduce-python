@@ -25,6 +25,9 @@
 		arbre fiable fable vendre
 		devenir faible barbe
 
+### comprendre le code python du mapper et reducer
+ouvrir les ficher mapper.py et reducer.py pour l'exemple 0 et essayer de comprendre/comparer avec le cours.
+
 ### Executer le program MapReduce Python on local (ceci est uniquement pour tester et valider le code Python du mapper et reducer
 pour test avant de passer en MapReduce pour détecter les erreurs Syntaxique
 ```bash
