@@ -25,16 +25,16 @@ Vous êtes sensés faire que l'exemple 0 et l'exemple 1
 		arbre fiable fable vendre
 		devenir faible barbe
 
-### comprendre le code python du mapper et reducer
+### 1) comprendre le code python du mapper et reducer
 ouvrir les ficher mapper.py et reducer.py pour l'exemple 0 et essayer de comprendre/comparer avec le cours.
 
-### Executer le program MapReduce Python on local (ceci est uniquement pour tester et valider le code Python du mapper et reducer)
+### 2) Executer le program MapReduce Python on local (ceci est uniquement pour tester et valider le code Python du mapper et reducer)
 pour test avant de passer en MapReduce pour détecter les erreurs Syntaxique
 ```bash
 cat <chemin de fichier input on local> | python <chemin de fichier mapper.py on local> | python <chemin de fichier reducer.py on local>
 ```
 
-### Execution d'un exemple directement sur le cluster Hadoop (traitement parallèle distribué) :
+### 3) Execution d'un exemple directement sur le cluster Hadoop (traitement parallèle distribué) :
 on a choisi l'exemple 1 pour tester
 
 
@@ -68,13 +68,13 @@ hadoop jar /usr/hdp/current/hadoop-mapreduce-historyserver/hadoop-streaming.jar
 -input input/input.txt
 -output out
 ```
-# Vous pouvez verifier dans YARN UI ou Job History UI que le traitement MapReduce est terminé avec succès
+# 4) Vous pouvez verifier dans YARN UI ou Job History UI que le traitement MapReduce est terminé avec succès
 
 ```bash
 # afficher le contenu de fichier output
 hdfs dfs -cat out/part-00000 
 ```
-
+# 5) nettoyer le repertoire out pour commencer avec l'exemple suivant:
 ```bash
 # une fois terminé, supprimer du répertoire Output pour repartir avec l'exemple suivant (sinon utiliser un autre repertoire output)
 hdfs dfs -rm -r out
