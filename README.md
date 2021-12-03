@@ -59,14 +59,14 @@ hadoop fs -ls  input/
 
 ```bash
 # execution Program Mapreduce
-hadoop jar /usr/hdp/current/hadoop-mapreduce-historyserver/hadoop-streaming.jar
--Dmaperd.reduce,tasks=1
--file /formation/mapreduce/exemple1/mapper.py
--mapper "mapper.py"
--file /formation/mapreduce/example1/reducer.py
--reducer "reducer.py"
--input input/input.txt
--output out
+hadoop jar /usr/hdp/current/hadoop-mapreduce-historyserver/hadoop-streaming.jar \
+-Dmaperd.reduce,tasks=1 \
+-file /formation/mapreduce/exemple1/mapper.py \
+-mapper "mapper.py" \
+-file /formation/mapreduce/example1/reducer.py \
+-reducer "reducer.py" \
+-input input/input.txt \
+-output out \
 ```
 # 4) Vous pouvez verifier dans YARN UI ou Job History UI que le traitement MapReduce est terminé avec succès
 
