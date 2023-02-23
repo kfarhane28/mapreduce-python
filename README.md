@@ -35,12 +35,12 @@ cat <chemin de fichier input on local> | python <chemin de fichier mapper.py on 
 ```
 
 # 3) Execution d'un exemple directement sur le cluster Hadoop (traitement parallèle distribué) :
-on a choisi l'exemple 1 pour tester
+on a choisi l'exemple 0 pour tester
 
 
 ```bash
 # se mettre dans le repertoire local: /formation/mapreduce
-cd /formation/mapreduce/exemple1
+cd /formation/mapreduce/exemple0
 ```
 
 ```bash
