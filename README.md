@@ -45,7 +45,7 @@ cd /formation/mapreduce/exemple0
 
 ```bash
 # créer répertoire input dans HDFS, ce répertoire va contenir le fichier de donnée input.txt
-hdfs dfs -mkdir /user/<user>/input
+hdfs dfs -mkdir input
 ```
 
 ```bash
